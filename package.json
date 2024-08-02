@@ -12,11 +12,14 @@
   "license": "ISC",
   "dependencies": {
     "antd": "^5.19.3",
+    "axios": "^1.7.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-highlight-words": "^0.20.0",
     "react-icons": "^5.2.1",
     "react-router-dom": "^6.25.1",
-    "react-scripts": "^5.0.1"
+    "react-scripts": "^5.0.1",
+    "react-use": "^17.5.1"
   },
   "browserslist": {
     "production": [
