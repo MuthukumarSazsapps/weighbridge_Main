@@ -49,11 +49,11 @@ const CustomerForm = ({ form }) => {
         <Row gutter={16}>
           <Col span={12}>
                 <Form.Item
-                name='NickName'
-                label='Nick Name'
+                name='username'
+                label='User Name'
                 rules={[{
                   required:true,
-                  message:'please Enter Nick Name'
+                  message:'please Enter User Name'
                 }]}
                 >
                    <Input placeholder="Please enter user name" />
@@ -132,11 +132,6 @@ const CustomerForm = ({ form }) => {
               ]}
             >
               <Input
-                // style={{
-                //   width: '100%',
-                // }}
-                // addonBefore="http://"
-                // addonAfter=".com"
                 placeholder="Please enter Phone Number"
               />
             </Form.Item>

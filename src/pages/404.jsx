@@ -2,6 +2,9 @@ import React from 'react';
 import { Button, Result } from 'antd';
 import { Link } from 'react-router-dom';
 const NotFoundPage = () => {
+
+
+  
   return (
     <div>
 

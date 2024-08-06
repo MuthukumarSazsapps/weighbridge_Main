@@ -56,8 +56,8 @@ const Mainlayout = () => {
   console.log(renderMenuItems(MenuItems), "breadcrumbs");
 
   return (
-    <Layout style={{ minHeight: '100vh', overflow: 'hidden', height: '100vh', width: '100vw', maxWidth: '100vw' }}>
-      <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
+    <Layout style={{height:'100vh'}}>
+      <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)} >
         <div className="logo" style={{
           // height: '32px',
           // margin: '16px',
@@ -93,7 +93,7 @@ const Mainlayout = () => {
           <div style={{
             padding: 24,
             margin: 20,
-            minHeight: '100vh',
+            // minHeight: '100vh',
             background: colorBgContainer,
             borderRadius: borderRadiusLG,
           }}>

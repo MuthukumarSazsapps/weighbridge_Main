@@ -16,7 +16,7 @@ const Home = () => {
            <p>We have been spending long hours in order to launch our new website. <br /> Join our mailing list or follow us on Facebook for the latest updates.</p>
          </div>
          <div>
-           <img src={logo} alt="truck"/>
+           <img src={logo} alt="truck"  className='truck'/>
          </div>
        </Flex >
          <SocialItems/>

@@ -1,6 +1,7 @@
 body{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 .home-container {
     min-height: 100vh;
@@ -114,3 +115,11 @@ body{
     }
   }
   
+
+  /* @media screen and (min-width: 1192px){
+    .truck{
+      display:flex;
+      flex-direction: column;
+      background-color: red;  
+    }
+  } */
