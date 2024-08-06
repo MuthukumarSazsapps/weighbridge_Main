@@ -1,22 +1,26 @@
 import React from 'react';
 import { Form, Input, Button, Row, Col, Card } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
-import logo from '../../assets/images/sazsgrey.png'; // Make sure to use your logo path
-import login from '../../../app/api/auth';
+import logo from '../../../assets/images/sazsgrey.png'; // Make sure to use your logo path
+import {login} from '../../../app/api/auth';
 import { useNavigate } from 'react-router-dom';
 import { useLocalStorage } from 'react-use';
 
 const LoginForm = () => {
 
     const [jwt, setJwt] = useLocalStorage('auth');
+    const [username, setUserName] = useLocalStorage('user');
+
     const navigate = useNavigate();
   
 
   const onFinish = async (values) => {
     console.log('Received values of form: ', values);
+
     const result=await login(values)
     if (result.data.Status === "success") {
            setJwt(result.data.token); // Save JWT token
+           setUserName(values.username)
            navigate("/");
          } else {
            alert(result.Error);

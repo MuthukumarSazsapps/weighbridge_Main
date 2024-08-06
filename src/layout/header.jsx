@@ -5,11 +5,15 @@ import { RiAccountPinCircleFill } from 'react-icons/ri';
 
 import { HiMiniXMark } from "react-icons/hi2";
 import Settings from '../pages/auth/logout/settings';
+import { useNavigate } from 'react-router-dom';
 {/* <HiMiniXMark /> */}
 const MainHeader = () => {
     const [open, setOpen] = useState(false);
+    const navigate=useNavigate()
     const hide = () => {
         setOpen(false);
+        localStorage.clear()
+        navigate('/login')
     };
     const handleOpenChange = (newOpen) => {
         setOpen(newOpen);
@@ -18,8 +22,8 @@ const MainHeader = () => {
         <>
             <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
                 <Popover
-                    content={<div onClick={hide}>
-                        <Settings/>
+                    content={<div >
+                        <Settings hide={hide}/>
                     </div>}
                     title="Settings"
                     trigger="click"

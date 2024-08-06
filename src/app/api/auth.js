@@ -5,10 +5,10 @@ import axios from "axios";
 
 
 
-const login = async (data) => {
+export const login = async (data) => {
      try {
        const res = await axiosInstance.post("/login", data);
-       console.log(res);
+       
     // const res = await axios.post("http://localhost:5000/login", data);
         return res
      } catch (err) {
@@ -16,4 +16,4 @@ const login = async (data) => {
      }
   };
 
-  export default login;
+  // export default login;
