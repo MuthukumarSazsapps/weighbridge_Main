@@ -20,9 +20,9 @@ app.use(expressCspHeader({
 
 const db = mysql.createConnection({
   host: 'localhost',
-  user: "root",
-  password: "tn96D1696",
-  database: "Sazs_weighbridge",
+  user: "ff",
+  password: "ff",
+  database: "sdsd",
 });
 
 db.connect(err => {
@@ -51,13 +51,17 @@ app.post('/login', (req, res) => {
       const token = jwt.sign({ id: user.id }, 'sazsapps', {
         expiresIn: '1h',
       });
-      console.log("token",token)
       return res.json({ Status: 'success', token });
     } else {
       return res.json({ Status: 'error', Error: 'Incorrect password'});
     }
   });
 });
+
+// app.post('/createcompany',(req,res=>{
+
+// }))
+
 
 app.listen(5000, () => {
   console.log('Server is running on port 5000');
