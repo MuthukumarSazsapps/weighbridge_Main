@@ -29,8 +29,157 @@ const data = [
     age: 32,
     address: 'London No. 2 Lake Park',
   },
+  {
+    key: '1',
+    name: 'John Brown',
+    age: 32,
+    address: 'New York No. 1 Lake Park',
+  },
+  {
+    key: '2',
+    name: 'Joe Black',
+    age: 42,
+    address: 'London No. 1 Lake Park',
+  },
+  {
+    key: '3',
+    name: 'Jim Green',
+    age: 32,
+    address: 'Sydney No. 1 Lake Park',
+  },
+  {
+    key: '1',
+    name: 'John Brown',
+    age: 32,
+    address: 'New York No. 1 Lake Park',
+  },
+  {
+    key: '2',
+    name: 'Joe Black',
+    age: 42,
+    address: 'London No. 1 Lake Park',
+  },
+  {
+    key: '3',
+    name: 'Jim Green',
+    age: 32,
+    address: 'Sydney No. 1 Lake Park',
+  },
+  {
+    key: '4',
+    name: 'Jim Red',
+    age: 32,
+    address: 'London No. 2 Lake Park',
+  },
+  {
+    key: '1',
+    name: 'John Brown',
+    age: 32,
+    address: 'New York No. 1 Lake Park',
+  },
+  {
+    key: '2',
+    name: 'Joe Black',
+    age: 42,
+    address: 'London No. 1 Lake Park',
+  },
+  {
+    key: '3',
+    name: 'Jim Green',
+    age: 32,
+    address: 'Sydney No. 1 Lake Park',
+  },
+
 ];
 const CustomerTable = () => {
+
+  const [tableData,seTableData] = useState([
+    {
+      key: '1',
+      name: 'John Brown',
+      age: 32,
+      address: 'New York No. 1 Lake Park',
+    },
+    {
+      key: '2',
+      name: 'Joe Black',
+      age: 42,
+      address: 'London No. 1 Lake Park',
+    },
+    {
+      key: '3',
+      name: 'Jim Green',
+      age: 32,
+      address: 'Sydney No. 1 Lake Park',
+    },
+    {
+      key: '4',
+      name: 'Jim Red',
+      age: 32,
+      address: 'London No. 2 Lake Park',
+    },
+    {
+      key: '1',
+      name: 'John Brown',
+      age: 32,
+      address: 'New York No. 1 Lake Park',
+    },
+    {
+      key: '2',
+      name: 'Joe Black',
+      age: 42,
+      address: 'London No. 1 Lake Park',
+    },
+    {
+      key: '3',
+      name: 'Jim Green',
+      age: 32,
+      address: 'Sydney No. 1 Lake Park',
+    },
+    {
+      key: '1',
+      name: 'John Brown',
+      age: 32,
+      address: 'New York No. 1 Lake Park',
+    },
+    {
+      key: '2',
+      name: 'Joe Black',
+      age: 42,
+      address: 'London No. 1 Lake Park',
+    },
+    {
+      key: '3',
+      name: 'Jim Green',
+      age: 32,
+      address: 'Sydney No. 1 Lake Park',
+    },
+    {
+      key: '4',
+      name: 'Jim Red',
+      age: 32,
+      address: 'London No. 2 Lake Park',
+    },
+    {
+      key: '1',
+      name: 'John Brown',
+      age: 32,
+      address: 'New York No. 1 Lake Park',
+    },
+    {
+      key: '2',
+      name: 'Joe Black',
+      age: 42,
+      address: 'London No. 1 Lake Park',
+    },
+    {
+      key: '3',
+      name: 'Jim Green',
+      age: 32,
+      address: 'Sydney No. 1 Lake Park',
+    },
+  
+  ])
   const [searchText, setSearchText] = useState('');
   const [searchedColumn, setSearchedColumn] = useState('');
   const searchInput = useRef(null);
@@ -161,6 +310,8 @@ const CustomerTable = () => {
       sortDirections: ['descend', 'ascend'],
     },
   ];
-  return <Table columns={columns} dataSource={data} />;
+  console.log("tabdata",tableData);
+  
+  return <Table columns={columns}   bordered dataSource={tableData} pagination={{ pageSize: 3,}} />;
 };
 export default CustomerTable;

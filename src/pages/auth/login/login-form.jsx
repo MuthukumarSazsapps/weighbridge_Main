@@ -18,6 +18,8 @@ const LoginForm = () => {
     console.log('Received values of form: ', values);
 
     const result=await login(values)
+    console.log(result);
+    
     if (result.data.Status === "success") {
            setJwt(result.data.token); // Save JWT token
            setUserName(values.username)

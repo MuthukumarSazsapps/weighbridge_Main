@@ -53,10 +53,11 @@ const Mainlayout = () => {
     });
 
   const breadcrumbs = location.pathname.split('/').filter((i) => i);
-  console.log(renderMenuItems(MenuItems), "breadcrumbs");
 
   return (
-    <Layout style={{height:'100vh'}}>
+    <Layout style={{
+      minHeight: '100vh',
+    }}>
       <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)} >
         <div className="logo" style={{
           // height: '32px',
@@ -94,6 +95,7 @@ const Mainlayout = () => {
             padding: 24,
             margin: 20,
             // minHeight: '100vh',
+            minHeight: 360,
             background: colorBgContainer,
             borderRadius: borderRadiusLG,
           }}>
