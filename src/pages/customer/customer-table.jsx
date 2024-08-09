@@ -1,185 +1,13 @@
 import React, { useRef, useState } from 'react';
-import { SearchOutlined } from '@ant-design/icons';
-import { Button, Input, Space, Table } from 'antd';
+import { SearchOutlined,EditOutlined,DeleteOutlined } from '@ant-design/icons';
+import { Button, Flex, Input, Space, Table } from 'antd';
 import Highlighter from 'react-highlight-words';
 
 
-const data = [
-  {
-    key: '1',
-    name: 'John Brown',
-    age: 32,
-    address: 'New York No. 1 Lake Park',
-  },
-  {
-    key: '2',
-    name: 'Joe Black',
-    age: 42,
-    address: 'London No. 1 Lake Park',
-  },
-  {
-    key: '3',
-    name: 'Jim Green',
-    age: 32,
-    address: 'Sydney No. 1 Lake Park',
-  },
-  {
-    key: '4',
-    name: 'Jim Red',
-    age: 32,
-    address: 'London No. 2 Lake Park',
-  },
-  {
-    key: '1',
-    name: 'John Brown',
-    age: 32,
-    address: 'New York No. 1 Lake Park',
-  },
-  {
-    key: '2',
-    name: 'Joe Black',
-    age: 42,
-    address: 'London No. 1 Lake Park',
-  },
-  {
-    key: '3',
-    name: 'Jim Green',
-    age: 32,
-    address: 'Sydney No. 1 Lake Park',
-  },
-  {
-    key: '1',
-    name: 'John Brown',
-    age: 32,
-    address: 'New York No. 1 Lake Park',
-  },
-  {
-    key: '2',
-    name: 'Joe Black',
-    age: 42,
-    address: 'London No. 1 Lake Park',
-  },
-  {
-    key: '3',
-    name: 'Jim Green',
-    age: 32,
-    address: 'Sydney No. 1 Lake Park',
-  },
-  {
-    key: '4',
-    name: 'Jim Red',
-    age: 32,
-    address: 'London No. 2 Lake Park',
-  },
-  {
-    key: '1',
-    name: 'John Brown',
-    age: 32,
-    address: 'New York No. 1 Lake Park',
-  },
-  {
-    key: '2',
-    name: 'Joe Black',
-    age: 42,
-    address: 'London No. 1 Lake Park',
-  },
-  {
-    key: '3',
-    name: 'Jim Green',
-    age: 32,
-    address: 'Sydney No. 1 Lake Park',
-  },
 
-];
-const CustomerTable = () => {
+const CustomerTable = ({ companyList,setIsModalVisible,handleEdit }) => {
 
-  const [tableData,seTableData] = useState([
-    {
-      key: '1',
-      name: 'John Brown',
-      age: 32,
-      address: 'New York No. 1 Lake Park',
-    },
-    {
-      key: '2',
-      name: 'Joe Black',
-      age: 42,
-      address: 'London No. 1 Lake Park',
-    },
-    {
-      key: '3',
-      name: 'Jim Green',
-      age: 32,
-      address: 'Sydney No. 1 Lake Park',
-    },
-    {
-      key: '4',
-      name: 'Jim Red',
-      age: 32,
-      address: 'London No. 2 Lake Park',
-    },
-    {
-      key: '1',
-      name: 'John Brown',
-      age: 32,
-      address: 'New York No. 1 Lake Park',
-    },
-    {
-      key: '2',
-      name: 'Joe Black',
-      age: 42,
-      address: 'London No. 1 Lake Park',
-    },
-    {
-      key: '3',
-      name: 'Jim Green',
-      age: 32,
-      address: 'Sydney No. 1 Lake Park',
-    },
-    {
-      key: '1',
-      name: 'John Brown',
-      age: 32,
-      address: 'New York No. 1 Lake Park',
-    },
-    {
-      key: '2',
-      name: 'Joe Black',
-      age: 42,
-      address: 'London No. 1 Lake Park',
-    },
-    {
-      key: '3',
-      name: 'Jim Green',
-      age: 32,
-      address: 'Sydney No. 1 Lake Park',
-    },
-    {
-      key: '4',
-      name: 'Jim Red',
-      age: 32,
-      address: 'London No. 2 Lake Park',
-    },
-    {
-      key: '1',
-      name: 'John Brown',
-      age: 32,
-      address: 'New York No. 1 Lake Park',
-    },
-    {
-      key: '2',
-      name: 'Joe Black',
-      age: 42,
-      address: 'London No. 1 Lake Park',
-    },
-    {
-      key: '3',
-      name: 'Jim Green',
-      age: 32,
-      address: 'Sydney No. 1 Lake Park',
-    },
-  
-  ])
+
   const [searchText, setSearchText] = useState('');
   const [searchedColumn, setSearchedColumn] = useState('');
   const searchInput = useRef(null);
@@ -192,6 +20,9 @@ const CustomerTable = () => {
     clearFilters();
     setSearchText('');
   };
+
+
+
   const getColumnSearchProps = (dataIndex) => ({
     filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters, close }) => (
       <div
@@ -288,30 +119,153 @@ const CustomerTable = () => {
   });
   const columns = [
     {
-      title: 'Name',
-      dataIndex: 'name',
-      key: 'name',
-      width: '30%',
-      ...getColumnSearchProps('name'),
+      title: 'Id',
+      dataIndex: 'id',
+      key: 'namee',
+      width: '20%',
+      ...getColumnSearchProps('id'),
     },
     {
-      title: 'Age',
-      dataIndex: 'age',
-      key: 'age',
+      title: 'CompanyId',
+      dataIndex: 'CompanyId',
+      key: 'CompanyId',
       width: '20%',
-      ...getColumnSearchProps('age'),
+      ...getColumnSearchProps('CompanyId'),
+    },
+    {
+      title: 'companyName',
+      dataIndex: 'companyName',
+      key: 'companyName',
+      width: '30%',
+      ...getColumnSearchProps('Name'),
+    },
+    {
+      title: 'username',
+      dataIndex: 'username',
+      key: 'username',
+      width: '30%',
+      ...getColumnSearchProps('username'),
     },
     {
       title: 'Address',
-      dataIndex: 'address',
-      key: 'address',
-      ...getColumnSearchProps('address'),
+      dataIndex: 'Address',
+      key: 'Address',
+      width: '20%',
+      ...getColumnSearchProps('Address'),
+    },
+    {
+      title: 'Place',
+      dataIndex: 'Place',
+      key: 'Place',
+      width: '20%',
+      ...getColumnSearchProps('Place'),
+    },
+    {
+      title: 'Pin',
+      dataIndex: 'Pin',
+      key: 'Pin',
+      ...getColumnSearchProps('Pin'),
       sorter: (a, b) => a.address.length - b.address.length,
       sortDirections: ['descend', 'ascend'],
     },
+    {
+      title: 'PhoneNo',
+      dataIndex: 'PhoneNO',
+      key: 'PhoneNo',
+      width: '20%',
+      ...getColumnSearchProps('PhoneNo'),
+    },
+    {
+      title: 'GST',
+      dataIndex: 'GST',
+      key: 'GST',
+      width: '30%',
+      ...getColumnSearchProps('GST'),
+    },
+    {
+      title: 'Pan',
+      dataIndex: 'Pan',
+      key: 'Pan',
+      width: '30%',
+      ...getColumnSearchProps('Pan'),
+    },
+    {
+      title: 'Password',
+      dataIndex: 'Address',
+      key: 'Address',
+      width: '20%',
+      ...getColumnSearchProps('Address'),
+    },
+    {
+      title: 'CreatedBy',
+      dataIndex: 'CreatedBy',
+      key: 'CreatedBy',
+      width: '20%',
+      ...getColumnSearchProps('CreatedBy'),
+    },
+    {
+      title: 'CreatedOn',
+      dataIndex: 'CreatedOn',
+      key: 'CreatedOn',
+      ...getColumnSearchProps('CreatedOn'),
+      sorter: (a, b) => a.address.length - b.address.length,
+      sortDirections: ['descend', 'ascend'],
+    },
+    {
+      title: 'ModifiedBy',
+      dataIndex: 'ModifiedBy',
+      key: 'ModifiedBy',
+      width: '20%',
+      ...getColumnSearchProps('ModifiedBy'),
+    },
+    {
+      title: 'ModifiedOn',
+      dataIndex: 'ModifiedOn',
+      key: 'ModifiedOn',
+      width: '30%',
+      ...getColumnSearchProps('ModifiedOn'),
+    },
+    {
+      title: 'Action',
+      key: 'operation',
+      // fixed: 'right',
+      width: '30%',
+      render: (text, record) => (
+        
+        <Flex gap='middle'>
+          <EditOutlined onClick={() => handleEdit(record)} /> 
+          <DeleteOutlined />
+        </Flex>
+      ),
+    },
+
   ];
-  console.log("tabdata",tableData);
-  
-  return <Table columns={columns}   bordered dataSource={tableData} pagination={{ pageSize: 3,}} />;
+
+
+
+
+  return( 
+    <>
+    <Flex justify='flex-end' >
+      <Button>
+        <EditOutlined/>
+      </Button> 
+    </Flex>
+    <Table
+      columns={columns} 
+      dataSource={companyList} 
+      bordered 
+      pagination={{ 
+        showSizeChanger: true,  // Enable the page size changer
+        pageSizeOptions: ['5', '10', '15', '100'], }} 
+      scroll={{
+        x: 1300,
+        // y: 300,
+      }}
+      size='small'
+      
+    />
+  </>
+  )
 };
 export default CustomerTable;

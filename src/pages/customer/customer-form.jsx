@@ -1,7 +1,9 @@
 import React from 'react'
 import { Button, Col, DatePicker, Drawer, Form, Input, Row, Select, Space } from 'antd';
 
-const CustomerForm = ({ form }) => {
+const CustomerForm = ({ form,loading }) => {
+  console.log("form",form);
+  
   const onFinish = (values) => {
     console.log('Success:', values);
   };
@@ -12,9 +14,9 @@ const CustomerForm = ({ form }) => {
     <div>
       <Form layout="vertical" form={form}>
         <Row gutter={16}>
-          <Col span={12}>
+          <Col span={24}>
             <Form.Item
-              name="name"
+              name="companyName"
               label="Company Name"
               rules={[
                 {
@@ -26,7 +28,7 @@ const CustomerForm = ({ form }) => {
               <Input placeholder="Please enter user name" />
             </Form.Item>
           </Col>
-          <Col span={12}>
+          {/* <Col span={12}>
             <Form.Item
               name="dateTime"
               label="year From"
@@ -44,7 +46,7 @@ const CustomerForm = ({ form }) => {
                 getPopupContainer={(trigger) => trigger.parentElement}
               />
             </Form.Item>
-          </Col>
+          </Col> */}
         </Row>
         <Row gutter={16}>
           <Col span={12}>
